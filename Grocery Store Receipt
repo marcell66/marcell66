@@ -1,0 +1,60 @@
+grocery_dictionary = {}
+gro_inv_file = open("groc_test2.txt", "r")
+ 
+for line in gro_inv_file:
+    line = line.strip()
+    product = line.split()
+    #print(product)
+    key = product[0]
+    value = float(product[1])
+    #print(key,value)
+    grocery_dictionary[key] = value
+ 
+print(grocery_dictionary)
+#gro_inv_file.close()
+ 
+ 
+#=====================================================Second Dictionary=========
+ 
+grocery_dictionary2 = {}
+gro_inv_file2 = open("groc_list_test.txt", "r")
+ 
+for line2 in gro_inv_file2:
+    line2 = line2.strip()
+    product2 = line2.split()
+    #print(product2)
+    key2 = product2[1]
+    value2 = product2[0]
+    #print(value2,number)
+    grocery_dictionary2[key2] = value2
+ 
+print(grocery_dictionary2)
+#gro_inv_file2.close()
+ 
+ 
+#====================================== Process our grocery list =============
+ 
+print("{:6s} {:7s} {:2s} {:6s} {:2s} {:5s}".format("QTY","ITEM", "@", "PPU", "=", "Total")) # Top of reciept
+ 
+print(grocery_dictionary2[key2])
+ 
+ 
+#
+#final_dictionary = {}
+#
+#running_total = 0
+#
+#for item in final_dictionary:
+#   # print(item)
+#    quantity = grocery_dictionary2[value2]
+#    grocery_item = grocery_dictionary[key]
+#    unit_price = float(grocery_dictionary[value])
+#    
+#    extension = quantity*unit_price
+#    
+#    
+#    print("{:3d} {:^10} @  {:4.2f}   = {:6.2f}".format(quantity, grocery_item, unit_price, extension))
+#    running_total += extension
+#    
+#    
+#print("Total due: ", running_total)
